@@ -18,7 +18,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 
 const CONTACT_EMAIL = process.env.POE2SCOUT_CONTACT_EMAIL || "ton-email@exemple.com";
-const BASE = "https://poe2scout.com/api";
+const BASE = "https://api.poe2scout.com";
 const DATA_DIR = "data";
 const RAW_DIR = `${DATA_DIR}/raw`;
 const HISTORY_CAP = 5000;
@@ -77,7 +77,9 @@ function field(obj, ...names) {
 async function main() {
   await mkdir(DATA_DIR, { recursive: true });
 
-  /* 1. Realm PoE2 (réponse en snake_case d'après la source) */
+  /* 1. Realm PoE2 (réponse en snake_case d'après la source).
+     ATTENTION : le champ `value` est un slug de routing du site (ex: "poe2/poe2"),
+     ce n'est PAS le segment d'URL de l'API. On utilise `realm_api_id`. */
   let realm = "poe2";
   try {
     const realms = await fetchJson(`${BASE}/Realms`);
@@ -85,7 +87,14 @@ async function main() {
     const poe2 = (Array.isArray(realms) ? realms : []).find(
       r => field(r, "game_api_id", "GameApiId") === "poe2"
     );
-    if (poe2) realm = field(poe2, "value", "Value") || realm;
+    if (poe2) {
+      const candidate =
+        field(poe2, "realm_api_id", "RealmApiId") ||
+        field(poe2, "value", "Value") ||
+        realm;
+      // garde-fou : si on récupère un slug "jeu/realm", ne garder que le dernier segment
+      realm = String(candidate).split("/").pop() || realm;
+    }
   } catch (e) {
     console.warn(`/Realms indisponible (${e.message}), realm par défaut : ${realm}`);
   }
