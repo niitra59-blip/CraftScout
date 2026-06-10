@@ -1,0 +1,402 @@
+[
+  {
+    "ItemId": 25,
+    "CategoryApiId": "accessory",
+    "Text": "Igniferis Crimson Amulet",
+    "Name": "Igniferis",
+    "Type": "Crimson Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0lnbmlmZXJpcyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/5283d32ccb/Igniferis.png"
+  },
+  {
+    "ItemId": 24,
+    "CategoryApiId": "accessory",
+    "Text": "Idol of Uldurn Crimson Amulet",
+    "Name": "Idol of Uldurn",
+    "Type": "Crimson Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0lkb2xPZlVsZHVybiIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/86bf4bd5d7/IdolOfUldurn.png"
+  },
+  {
+    "ItemId": 43,
+    "CategoryApiId": "accessory",
+    "Text": "Serpent's Egg Gold Amulet",
+    "Name": "Serpent's Egg",
+    "Type": "Gold Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVNlcnBlbnRzRWdnIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fe60331911/TheSerpentsEgg.png"
+  },
+  {
+    "ItemId": 18,
+    "CategoryApiId": "accessory",
+    "Text": "Eye of Chayula Gold Amulet",
+    "Name": "Eye of Chayula",
+    "Type": "Gold Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0V5ZU9mQ2hheXVsYSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/b46b4e3204/EyeOfChayula.png"
+  },
+  {
+    "ItemId": 54,
+    "CategoryApiId": "accessory",
+    "Text": "Ungil's Harmony Azure Amulet",
+    "Name": "Ungil's Harmony",
+    "Type": "Azure Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1VuZ2lsc0hhcm1vbnkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6865185b8f/UngilsHarmony.png"
+  },
+  {
+    "ItemId": 51,
+    "CategoryApiId": "accessory",
+    "Text": "The Everlasting Gaze Azure Amulet",
+    "Name": "The Everlasting Gaze",
+    "Type": "Azure Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZUV2ZXJsYXN0aW5nR2F6ZSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6712f57467/TheEverlastingGaze.png"
+  },
+  {
+    "ItemId": 57,
+    "CategoryApiId": "accessory",
+    "Text": "Xoph's Blood Amber Amulet",
+    "Name": "Xoph's Blood",
+    "Type": "Amber Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1hvcGhzQmxvb2QiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2e10b554f9/XophsBlood.png"
+  },
+  {
+    "ItemId": 38,
+    "CategoryApiId": "accessory",
+    "Text": "Revered Resin Amber Amulet",
+    "Name": "Revered Resin",
+    "Type": "Amber Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1JldmVyZWRSZXNpbiIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6139c327c5/ReveredResin.png"
+  },
+  {
+    "ItemId": 10,
+    "CategoryApiId": "accessory",
+    "Text": "Carnage Heart Amber Amulet",
+    "Name": "Carnage Heart",
+    "Type": "Amber Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nhcm5hZ2VIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/fa1b9d80b8/CarnageHeart.png"
+  },
+  {
+    "ItemId": 48,
+    "CategoryApiId": "accessory",
+    "Text": "Surefooted Sigil Jade Amulet",
+    "Name": "Surefooted Sigil",
+    "Type": "Jade Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1N1cmVmb290ZWRTaWdpbCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/78449612a8/SurefootedSigil.png"
+  },
+  {
+    "ItemId": 15,
+    "CategoryApiId": "accessory",
+    "Text": "Defiance of Destiny Jade Amulet",
+    "Name": "Defiance of Destiny",
+    "Type": "Jade Amulet",
+    "ApiId": null,
+    "CurrentPrice": 5,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlZmlhbmNlT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/713775c874/DefianceOfDestiny.png"
+  },
+  {
+    "ItemId": 11,
+    "CategoryApiId": "accessory",
+    "Text": "Choir of the Storm Jade Amulet",
+    "Name": "Choir of the Storm",
+    "Type": "Jade Amulet",
+    "ApiId": null,
+    "CurrentPrice": 9,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
+  },
+  {
+    "ItemId": 485,
+    "CategoryApiId": "accessory",
+    "Text": "Stone of Lazhwar Lapis Amulet",
+    "Name": "Stone of Lazhwar",
+    "Type": "Lapis Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1N0b25lT2ZMYXpod2FyIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8d95196560/StoneOfLazhwar.png"
+  },
+  {
+    "ItemId": 52,
+    "CategoryApiId": "accessory",
+    "Text": "The Pandemonius Lapis Amulet",
+    "Name": "The Pandemonius",
+    "Type": "Lapis Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVBhbmRlbW9uaXVzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5757408698/ThePandemonius.png"
+  },
+  {
+    "ItemId": 31,
+    "CategoryApiId": "accessory",
+    "Text": "Ligurium Talisman Lapis Amulet",
+    "Name": "Ligurium Talisman",
+    "Type": "Lapis Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0xpZ3VyaXVtVGFsaXNtYW4iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad4bae46d9/LiguriumTalisman.png"
+  },
+  {
+    "ItemId": 39,
+    "CategoryApiId": "accessory",
+    "Text": "Rondel of Fragility Lunar Amulet",
+    "Name": "Rondel of Fragility",
+    "Type": "Lunar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1JvbmRlbE9mRnJhZ2lsaXR5IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/156889f601/RondelOfFragility.png"
+  },
+  {
+    "ItemId": 567,
+    "CategoryApiId": "accessory",
+    "Text": "Yoke of Suffering Bloodstone Amulet",
+    "Name": "Yoke of Suffering",
+    "Type": "Bloodstone Amulet",
+    "ApiId": null,
+    "CurrentPrice": 7,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1lva2VPZlN1ZmZlcmluZyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/89e7948e7c/YokeOfSuffering.png"
+  },
+  {
+    "ItemId": 49,
+    "CategoryApiId": "accessory",
+    "Text": "The Anvil Bloodstone Amulet",
+    "Name": "The Anvil",
+    "Type": "Bloodstone Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZUFudmlsIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ee5dc2e9b8/TheAnvil.png"
+  },
+  {
+    "ItemId": 4860,
+    "CategoryApiId": "accessory",
+    "Text": "Hinekora's Sight Stellar Amulet",
+    "Name": "Hinekora's Sight",
+    "Type": "Stellar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0hpbmVrb3Jhc1NpZ2h0IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/6fc968aceb/HinekorasSight.png"
+  },
+  {
+    "ItemId": 47,
+    "CategoryApiId": "accessory",
+    "Text": "Strugglescream Stellar Amulet",
+    "Name": "Strugglescream",
+    "Type": "Stellar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 2,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlbGlyaXVtQW11bGV0IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9e8a23019a/DeliriumAmulet.png"
+  },
+  {
+    "ItemId": 20,
+    "CategoryApiId": "accessory",
+    "Text": "Fixation of Yix Stellar Amulet",
+    "Name": "Fixation of Yix",
+    "Type": "Stellar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0ZpeGF0aW9uT2ZZaXgiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a9ecf97e35/FixationOfYix.png"
+  },
+  {
+    "ItemId": 2,
+    "CategoryApiId": "accessory",
+    "Text": "Astramentis Stellar Amulet",
+    "Name": "Astramentis",
+    "Type": "Stellar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 16,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0FzdHJhbWVudGlzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/541d1c98f9/Astramentis.png"
+  },
+  {
+    "ItemId": 14623,
+    "CategoryApiId": "accessory",
+    "Text": "Immaculate Adherence Solar Amulet",
+    "Name": "Immaculate Adherence",
+    "Type": "Solar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 3,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0NoYWluc09mQWRoZXJlbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/643b0dc269/ChainsOfAdherence.png"
+  },
+  {
+    "ItemId": 19,
+    "CategoryApiId": "accessory",
+    "Text": "Fireflower Solar Amulet",
+    "Name": "Fireflower",
+    "Type": "Solar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0ZpcmVmbG93ZXIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/9430446301/Fireflower.png"
+  },
+  {
+    "ItemId": 3,
+    "CategoryApiId": "accessory",
+    "Text": "Beacon of Azis Solar Amulet",
+    "Name": "Beacon of Azis",
+    "Type": "Solar Amulet",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0JlYWNvbk9mQXppcyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2d0ad03930/BeaconOfAzis.png"
+  },
+  {
+    "ItemId": 33,
+    "CategoryApiId": "accessory",
+    "Text": "Midnight Braid Rawhide Belt",
+    "Name": "Midnight Braid",
+    "Type": "Rawhide Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NaWRuaWdodEJyYWlkIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/191c4a3640/MidnightBraid.png"
+  },
+  {
+    "ItemId": 32,
+    "CategoryApiId": "accessory",
+    "Text": "Meginord's Girdle Rawhide Belt",
+    "Name": "Meginord's Girdle",
+    "Type": "Rawhide Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NZWdpbm9yZHNHaXJkbGUiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2feba3dafb/MeginordsGirdle.png"
+  },
+  {
+    "ItemId": 14035,
+    "CategoryApiId": "accessory",
+    "Text": "Mageblood Utility Belt",
+    "Name": "Mageblood",
+    "Type": "Utility Belt",
+    "ApiId": null,
+    "CurrentPrice": 65192.59166392219,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
+  },
+  {
+    "ItemId": 14034,
+    "CategoryApiId": "accessory",
+    "Text": "Cat O' Nine Tails Utility Belt",
+    "Name": "Cat O' Nine Tails",
+    "Type": "Utility Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9DYXRPTmluZVRhaWxzIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/292ebc8389/CatONineTails.png"
+  },
+  {
+    "ItemId": 27,
+    "CategoryApiId": "accessory",
+    "Text": "Ingenuity Utility Belt",
+    "Name": "Ingenuity",
+    "Type": "Utility Belt",
+    "ApiId": null,
+    "CurrentPrice": 5,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9XaWRvd21ha2VyIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/394f71de07/Widowmaker.png"
+  },
+  {
+    "ItemId": 4993,
+    "CategoryApiId": "accessory",
+    "Text": "Darkness Enthroned Fine Belt",
+    "Name": "Darkness Enthroned",
+    "Type": "Fine Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9EYXJrbmVzc0VudGhyb25lZCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9bbef2f97f/DarknessEnthroned.png"
+  },
+  {
+    "ItemId": 44,
+    "CategoryApiId": "accessory",
+    "Text": "Shavronne's Satchel Fine Belt",
+    "Name": "Shavronne's Satchel",
+    "Type": "Fine Belt",
+    "ApiId": null,
+    "CurrentPrice": 5,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9TaGF2cm9ubmVzU2F0Y2hlbCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/03b20ba6b9/ShavronnesSatchel.png"
+  },
+  {
+    "ItemId": 4730,
+    "CategoryApiId": "accessory",
+    "Text": "Umbilicus Immortalis Linen Belt",
+    "Name": "Umbilicus Immortalis",
+    "Type": "Linen Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9VbWJpbGljdXNJbW1vcnRhbGlzIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/72e5991990/UmbilicusImmortalis.png"
+  },
+  {
+    "ItemId": 29,
+    "CategoryApiId": "accessory",
+    "Text": "Keelhaul Linen Belt",
+    "Name": "Keelhaul",
+    "Type": "Linen Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9LZWVsaGF1bCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/4a427d3e49/Keelhaul.png"
+  },
+  {
+    "ItemId": 4121,
+    "CategoryApiId": "accessory",
+    "Text": "Byrnabas Wide Belt",
+    "Name": "Byrnabas",
+    "Type": "Wide Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9CeXJuYWJhcyIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/f4ee3256e9/Byrnabas.png"
+  },
+  {
+    "ItemId": 566,
+    "CategoryApiId": "accessory",
+    "Text": "The Gnashing Sash Wide Belt",
+    "Name": "The Gnashing Sash",
+    "Type": "Wide Belt",
+    "ApiId": null,
+    "CurrentPrice": 39590.64271088392,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9HbmFzaGluZ1Nhc2giLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c996ea805c/GnashingSash.png"
+  },
+  {
+    "ItemId": 4,
+    "CategoryApiId": "accessory",
+    "Text": "Birthright Buckle Wide Belt",
+    "Name": "Birthright Buckle",
+    "Type": "Wide Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9CaXJ0aHJpZ2h0QnVja2xlIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5549f2f4ca/BirthrightBuckle.png"
+  },
+  {
+    "ItemId": 46,
+    "CategoryApiId": "accessory",
+    "Text": "Soul Tether Long Belt",
+    "Name": "Soul Tether",
+    "Type": "Long Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9Tb3VsVGV0aGVyIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/3a7bb8985a/SoulTether.png"
+  },
+  {
+    "ItemId": 536,
+    "CategoryApiId": "accessory",
+    "Text": "Goregirdle Plate Belt",
+    "Name": "Goregirdle",
+    "Type": "Plate Belt",
+    "ApiId": null,
+    "CurrentPrice": 1,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9Hb3JlZ2lyZGxlIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fbe737d02a/Goregirdle.png"
+  },
+  {
+    "ItemId": 26,
+    "CategoryApiId": "accessory",
+    "Text": "Infernoclasp Plate Belt",
+    "Name": "Infernoclasp",
+    "Type": "Plate Belt",
+    "ApiId": null,
+    "CurrentPrice": 0,
+    "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9JbmZlcm5vY2xhc3AiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8b588f973c/Infernoclasp.png"
+  }
+]
