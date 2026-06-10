@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CraftScout — Rentabilité de craft PoE2 · Runes of Aldur (0.5)</title>
+<style>
+  :root{
+    --bg:#0c0f12;
+    --panel:#141a20;
+    --panel-2:#1a222a;
+    --line:#26313b;
+    --bone:#e8e0d0;
+    --muted:#7d8a93;
+    --gold:#c8aa6e;
+    --gold-bright:#e8cf9a;
+    --abyss:#4fd8c4;
+    --loss:#d96a5a;
+    --brick:#54616b;
+    --ok:#8fae6e;
+    --good:#4fd8c4;
+    --jackpot:#c8aa6e;
+    --radius:10px;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{background:var(--bg);color:var(--bone);font-family:var(--sans);font-size:15px;line-height:1.55;padding-bottom:80px}
+  a{color:var(--abyss)}
+
+  header{padding:34px 22px 26px;max-width:1060px;margin:0 auto;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--abyss);margin-bottom:10px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4.5vw,38px);letter-spacing:.01em}
+  h1 .gold{color:var(--gold)}
+  .tagline{color:var(--muted);margin-top:8px;max-width:62ch}
+  .proto-pill{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:3px 12px;opacity:.85}
+
+  main{max-width:1060px;margin:0 auto;padding:0 22px}
+  section{margin-top:38px}
+  h2{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:4px}
+  .sub{color:var(--muted);font-size:13.5px;margin-bottom:16px;max-width:76ch}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+
+  /* ---- prix ---- */
+  details.price-group{margin-bottom:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2)}
+  details.price-group summary{cursor:pointer;padding:10px 14px;font-family:var(--serif);font-size:15px;color:var(--gold);list-style:none;display:flex;justify-content:space-between}
+  details.price-group summary::after{content:"+";color:var(--muted);font-family:var(--mono)}
+  details.price-group[open] summary::after{content:"–"}
+  details.price-group summary:focus-visible{outline:2px solid var(--abyss);outline-offset:-2px}
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;padding:0 14px 14px}
+  .price-cell label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+  .price-cell .row{display:flex;align-items:baseline;gap:6px}
+  input[type=number]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--gold-bright);font-family:var(--mono);font-size:15px;padding:5px 8px}
+  input[type=number]:focus{outline:2px solid var(--abyss);outline-offset:1px;border-color:var(--abyss)}
+  .unit{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+  /* ---- onglets ---- */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .tab{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:13.5px;padding:7px 16px;cursor:pointer;font-family:var(--sans)}
+  .tab:hover{color:var(--bone)}
+  .tab:focus-visible{outline:2px solid var(--abyss);outline-offset:2px}
+  .tab.active{background:var(--gold);color:#0c0f12;border-color:var(--gold);font-weight:600}
+  .tab-desc{color:var(--muted);font-size:13.5px;margin:10px 2px 16px;max-width:76ch}
+
+  /* ---- classement ---- */
+  .recipe{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:16px;overflow:hidden}
+  .recipe-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:16px 18px;cursor:pointer}
+  .recipe-head:focus-visible{outline:2px solid var(--abyss);outline-offset:-2px}
+  .rank-badge{font-family:var(--serif);font-size:22px;color:var(--gold);min-width:34px;text-align:center}
+  .recipe-title{flex:1;min-width:220px}
+  .recipe-title .name{font-family:var(--serif);font-size:18px}
+  .recipe-title .desc{font-size:12.5px;color:var(--muted)}
+  .kpi{text-align:right;min-width:130px}
+  .kpi .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .kpi .value{font-family:var(--mono);font-size:19px}
+  .pos{color:var(--abyss)} .neg{color:var(--loss)}
+  .chev{color:var(--muted);font-size:13px;transition:transform .2s}
+  .recipe.open .chev{transform:rotate(90deg)}
+
+  /* signature : barre de distribution */
+  .dist-wrap{padding:0 18px 14px}
+  .dist-bar{display:flex;height:26px;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+  .dist-seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;color:#0c0f12;font-weight:600;min-width:0;overflow:hidden;white-space:nowrap}
+  .dist-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:7px;font-size:11.5px;color:var(--muted)}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:baseline}
+
+  .recipe-body{display:none;border-top:1px solid var(--line);padding:18px;background:var(--panel-2)}
+  .recipe.open .recipe-body{display:block}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.cols{grid-template-columns:1fr}}
+  h3{font-family:var(--serif);font-size:15.5px;color:var(--gold);margin-bottom:10px;font-weight:600}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+  td{padding:6px;border-bottom:1px solid rgba(38,49,59,.5);vertical-align:middle}
+  td.num{font-family:var(--mono);text-align:right;color:var(--gold-bright)}
+  td input[type=number]{width:74px;font-size:13px;padding:3px 6px}
+  .total-row td{border-top:1px solid var(--line);border-bottom:none;font-weight:600;color:var(--gold)}
+
+  ol.steps{padding-left:20px;font-size:14px}
+  ol.steps li{margin-bottom:9px}
+  ol.steps li b{color:var(--gold-bright);font-weight:600}
+  .warn{background:rgba(217,106,90,.1);border:1px solid rgba(217,106,90,.4);border-radius:8px;padding:10px 12px;font-size:13px;margin-top:12px}
+  .warn b{color:var(--loss)}
+
+  .ev-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:16px}
+  .ev-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .ev-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+  .ev-card .value{font-family:var(--mono);font-size:17px;margin-top:3px}
+
+  /* ---- alertes ---- */
+  .alert-form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin-bottom:14px}
+  .alert-form .field{display:flex;flex-direction:column;gap:4px}
+  .alert-form label{font-size:11.5px;color:var(--muted)}
+  select{background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--bone);font-size:14px;padding:6px 8px;max-width:280px}
+  select:focus{outline:2px solid var(--abyss)}
+  button{background:var(--gold);color:#0c0f12;border:none;border-radius:6px;font-weight:600;font-size:14px;padding:8px 16px;cursor:pointer;font-family:var(--sans)}
+  button:hover{background:var(--gold-bright)}
+  button:focus-visible{outline:2px solid var(--abyss);outline-offset:2px}
+  button.ghost{background:transparent;color:var(--loss);border:1px solid var(--line);font-weight:400;padding:4px 10px;font-size:12.5px}
+  .alert-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-bottom:8px;font-size:13.5px}
+  .alert-item .trig{color:var(--abyss);font-family:var(--mono);font-size:12px}
+  .empty{color:var(--muted);font-size:13.5px;font-style:italic}
+
+  /* ---- historique ---- */
+  .spark-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .spark-card{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:12px}
+  .spark-card .name{font-size:13px;margin-bottom:2px}
+  .spark-card .delta{font-family:var(--mono);font-size:12px}
+  svg.spark{width:100%;height:54px;margin-top:6px;display:block}
+
+  footer{max-width:1060px;margin:50px auto 0;padding:18px 22px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Runes of Aldur — patch 0.5 Return of the Ancients</div>
+  <h1>Craft<span class="gold">Scout</span></h1>
+  <p class="tagline">Quel craft vaut ton Divine aujourd'hui ? Rentabilité par tentative, calculée à partir des prix du marché et de tes hypothèses de revente. Recettes à jour 0.5 : Recombinator désactivé cette league, Omen of Corruption retiré — rien de tout ça ici.</p>
+  <span class="proto-pill" id="livePill">PROTOTYPE — prix factices, tout est éditable</span>
+  <div id="liveStatus" style="margin-top:10px;font-size:12.5px;color:var(--muted)"></div>
+</header>
+
+<main>
+
+  <!-- ============ PRIX ============ -->
+  <section id="prix">
+    <h2>Prix du marché</h2>
+    <p class="sub">En V1 finale, ces valeurs viendront de l'API POE2Scout, rafraîchies toutes les heures. Pour l'instant : mets les prix que tu observes en jeu. Tout est en <strong>Exalted Orbs</strong>. Les recettes se recalculent à chaque modification.</p>
+    <div class="panel" id="priceGroups"></div>
+  </section>
+
+  <!-- ============ CLASSEMENT ============ -->
+  <section id="classement">
+    <h2>Les crafts, par famille</h2>
+    <p class="sub">Chaque onglet est une façon différente de gagner de la currency avec le craft. Dans chaque onglet, les recettes sont triées par profit moyen par tentative. Clique sur une recette pour le détail : coûts, paliers de résultat (probabilités et reventes éditables — alimente-les avec ton price check) et step-by-step. Les probabilités fournies sont des <strong>hypothèses de départ</strong>, pas des données mesurées : ajuste-les avec ton expérience.</p>
+    <div class="tabs" id="tabBar" role="tablist"></div>
+    <p class="tab-desc" id="tabDesc"></p>
+    <div id="recipeList"></div>
+  </section>
+
+  <!-- ============ ALERTES ============ -->
+  <section id="alertes">
+    <h2>Alertes de prix <span class="unit">(V2 — démo d'interface)</span></h2>
+    <p class="sub">Une fois le collecteur branché, ces alertes seront vérifiées à chaque rafraîchissement. Tu peux déjà les configurer : change un prix en haut de page et regarde le statut basculer.</p>
+    <div class="panel">
+      <div class="alert-form">
+        <div class="field">
+          <label for="alertItem">Item suivi</label>
+          <select id="alertItem"></select>
+        </div>
+        <div class="field">
+          <label for="alertDir">Condition</label>
+          <select id="alertDir">
+            <option value="below">passe sous</option>
+            <option value="above">dépasse</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="alertVal">Seuil (ex)</label>
+          <input type="number" id="alertVal" min="0" step="1" value="100" style="width:100px">
+        </div>
+        <button id="alertAdd">Créer l'alerte</button>
+      </div>
+      <div id="alertList"><p class="empty">Aucune alerte pour l'instant. Crée la première ci-dessus.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HISTORIQUE ============ -->
+  <section id="historique">
+    <h2>Historique des prix <span class="unit">(V2 — données de démonstration)</span></h2>
+    <p class="sub">Le collecteur enregistrera un point par heure dès sa mise en service. Début de league = matos de craft cher, puis ça s'effondre — ces courbes diront quand acheter tes omens et quand vendre tes bones. Courbes ci-dessous générées pour la démo.</p>
+    <div class="spark-grid" id="sparkGrid"></div>
+  </section>
+
+</main>
+
+<footer>
+  CraftScout — prototype V1+V2 · league Runes of Aldur (0.5). Aucune donnée n'est sauvegardée (état en mémoire uniquement). Prochaine étape : brancher l'API POE2Scout et le collecteur horaire.
+</footer>
+
+<script>
+/* =====================================================
+   ÉTAT — tout en mémoire, rien n'est persisté (prototype)
+   ===================================================== */
+
+// Prix unitaires en Exalted Orbs — FACTICES, à ajuster avec les prix de la league
+const priceGroups = [
+  { id:"currency", label:"Currency de base", keys:{
+    divine:       { label:"Divine Orb",                        value:300 },
+    exalt:        { label:"Exalted Orb",                       value:1 },
+    greaterExalt: { label:"Greater Exalted Orb (min mod lvl)", value:10 },
+    regal:        { label:"Regal Orb",                         value:1 },
+    chaos:        { label:"Chaos Orb",                         value:4 },
+    annul:        { label:"Orb of Annulment",                  value:25 },
+    fracturing:   { label:"Fracturing Orb",                    value:1100 },
+    artificer:    { label:"Artificer's Orb (l'unité)",         value:2 },
+    quality:      { label:"Quality 20% (coût total)",          value:8 },
+  }},
+  { id:"omens", label:"Omens", keys:{
+    putrefaction: { label:"Omen of Putrefaction",              value:110 },
+    echoes:       { label:"Omen of Abyssal Echoes",            value:45 },
+    necromancy:   { label:"Omen Sinistral/Dextral Necromancy", value:35 },
+    light:        { label:"Omen of Light",                     value:60 },
+    dirExalt:     { label:"Omen Sinistral/Dextral Exaltation", value:55 },
+    whittling:    { label:"Omen of Whittling",                 value:70 },
+  }},
+  { id:"consos", label:"Os, essences & 0.5", keys:{
+    rib:          { label:"Preserved Rib",                     value:30 },
+    boneJewel:    { label:"Preserved bone (slot bijou)",       value:25 },
+    essenceG:     { label:"Greater Essence (mod demandé)",     value:50 },
+    emotion:      { label:"Liquid Emotion (jewel)",            value:35 },
+    verisium:     { label:"Runeforging (coût Verisium équiv.)",value:80 },
+  }},
+  { id:"bases", label:"Bases & items de départ", keys:{
+    baseVile:     { label:"Vile Robe ilvl 81+ (blanche)",      value:5 },
+    baseFract:    { label:"Vile Robe fracturée (bon mod T1-T2)", value:700 },
+    baseMagic2T1: { label:"Item magique, 2 mods T1, bon ilvl", value:60 },
+    baseRare2T1:  { label:"Rare prometteur (2 T1 + slots libres)", value:150 },
+    baseRare4m:   { label:"Rare 4 mods dont 1 premium (à fracturer)", value:40 },
+    baseAmulet:   { label:"Amulette rare (2 résist. + slots libres)", value:30 },
+    uniqueLow:    { label:"Unique bas niveau recherché (base faible)", value:25 },
+    jewelRare:    { label:"Jewel rare (2 bons mods + 1 raté)", value:30 },
+  }},
+];
+// index plat pour les calculs
+const prices = {};
+priceGroups.forEach(g => Object.entries(g.keys).forEach(([k,p]) => prices[k] = p));
+
+/* ============ catégories (onglets) ============ */
+const categories = [
+  { id:"gamble", label:"Gamble désacration",
+    desc:"Ta spécialité : tout miser sur un reroll complet en mods désacrés. Coût fixe, résultat très variable — le profit vient du volume." },
+  { id:"finition", label:"Finition d'item",
+    desc:"Le cas « j'ai une base avec 2 mods T1, j'en fais quoi ? ». Réponse : on complète les slots libres de façon dirigée — essence pour le mod garanti (un seul usage par item en 0.5), omens directionnels pour viser préfixes ou suffixes aux Exalted, Whittling + Chaos pour réparer une bêtise. Moins de variance, plus de contrôle." },
+  { id:"ciblee", label:"Désacration ciblée",
+    desc:"La désacration version scalpel : ajouter UN mod désacré précis sur un item déjà bon, au lieu de tout rerolls. Omens de Necromancy pour viser le bon côté, Omen of Light + Annulment comme filet de sécurité." },
+  { id:"fracture", label:"Fracturing (fournisseur)",
+    desc:"Monter d'un étage dans la pyramide : produire les bases fracturées que les autres crafteurs (dont toi) achètent. 1 chance sur 4 de verrouiller le bon mod sur un rare à 4 mods — le taux d'échec est compensé par le prix de vente des réussites." },
+  { id:"nouveau", label:"Nouveautés 0.5",
+    desc:"Les systèmes ajoutés par Return of the Ancients : Runeforging au Verisium (sauver les uniques à base faible) et Liquid Emotions (mod garanti sur jewel). Crafts plus déterministes, variance faible — parfaits pour un revenu régulier entre deux gambles." },
+];
+
+/* ============ recettes ============ */
+const recipes = [
+  /* ---- GAMBLE ---- */
+  {
+    id:"vile-classic", cat:"gamble",
+    name:"Vile Robe — full désacration",
+    desc:"Ta recette actuelle : base blanche, 6 mods désacrés, reveal au Well of Souls.",
+    inputs:[ {key:"baseVile",qty:1},{key:"quality",qty:1},{key:"artificer",qty:2},{key:"putrefaction",qty:1},{key:"rib",qty:1} ],
+    outcomes:[
+      { label:"Brick (mods inutilisables)", prob:55, value:5,    tier:"brick" },
+      { label:"Correct (vendable)",         prob:27, value:120,  tier:"ok" },
+      { label:"Bon roll",                   prob:14, value:450,  tier:"good" },
+      { label:"Jackpot",                    prob:4,  value:1800, tier:"jackpot" },
+    ],
+    steps:[
+      "Acheter une <b>Vile Robe blanche ilvl 81+</b> (vérifier sur poe2db si tes mods cibles demandent ilvl 82).",
+      "Monter la <b>quality à 20%</b> et appliquer <b>2 Artificer's Orbs</b> — avant l'omen, la corruption verrouille tout ensuite.",
+      "Activer l'<b>Omen of Putrefaction</b>, puis appliquer la <b>Preserved Rib</b> (jamais l'Ancient avec Putrefaction : le niveau minimum de mod n'est pas respecté).",
+      "Au <b>Well of Souls</b>, révéler les 6 mods en réévaluant après chaque reveal.",
+      "Price check du résultat, vente ou salvage.",
+    ],
+    warn:null,
+  },
+  {
+    id:"vile-fract", cat:"gamble",
+    name:"Vile Robe fracturée — désacration premium",
+    desc:"Base avec un mod fracturé T1-T2. L'omen roll 5 mods, le fracturé survit.",
+    inputs:[ {key:"baseFract",qty:1},{key:"quality",qty:1},{key:"artificer",qty:2},{key:"putrefaction",qty:1},{key:"rib",qty:1},{key:"echoes",qty:2} ],
+    outcomes:[
+      { label:"Brick (le fracturé sauve les meubles)", prob:35, value:140,  tier:"brick" },
+      { label:"Correct (vendable)",                    prob:35, value:600,  tier:"ok" },
+      { label:"Bon roll",                              prob:22, value:2200, tier:"good" },
+      { label:"Jackpot",                               prob:8,  value:7000, tier:"jackpot" },
+    ],
+    steps:[
+      "Acheter sur le trade une <b>Vile Robe ilvl 81+ avec mod fracturé premium</b> (filtre « Fractured », vérifier le tier sur poe2db et que l'item n'est pas déjà corrompu).",
+      "Quality 20% + <b>2 Artificer's Orbs</b> avant toute chose.",
+      "<b>Omen of Putrefaction</b> + <b>Preserved Rib</b> : 5 mods désacrés, le fracturé reste intact.",
+      "Au Well of Souls, révéler les premiers mods <b>sans omen</b>.",
+      "Si l'item part bien (2+ bons mods), <b>Omen of Abyssal Echoes</b> sur les reveals restants (options doublées). S'il part mal, finir sans — stop-loss.",
+      "Price check, vente. Les jackpots se vendent en Divines.",
+    ],
+    warn:"Variance élevée : mise par tentative ~6× plus grosse que le craft classique. La moyenne ne se réalise que sur le volume.",
+  },
+
+  /* ---- FINITION ---- */
+  {
+    id:"magic-2t1", cat:"finition",
+    name:"Magique 2×T1 → Regal → Exalts dirigés",
+    desc:"Le point de départ idéal : un item magique avec ses 2 mods T1, bon ilvl.",
+    inputs:[ {key:"baseMagic2T1",qty:1},{key:"regal",qty:1},{key:"essenceG",qty:1},{key:"exalt",qty:3},{key:"dirExalt",qty:2} ],
+    outcomes:[
+      { label:"Mods de remplissage ratés",  prob:35, value:90,   tier:"brick" },
+      { label:"Correct (vendable)",         prob:38, value:300,  tier:"ok" },
+      { label:"Bon item",                   prob:22, value:800,  tier:"good" },
+      { label:"Excellent (4+ mods utiles)", prob:5,  value:2200, tier:"jackpot" },
+    ],
+    steps:[
+      "Acheter (ou garder de tes drops) un <b>item magique avec 2 mods T1</b> et un ilvl suffisant pour les tiers max — vérifier sur poe2db.",
+      "<b>Regal Orb</b> : passe l'item rare en ajoutant un 3e mod aléatoire.",
+      "<b>Greater Essence</b> du mod que tu veux garantir — attention 0.5 : <b>une seule essence par item</b>, choisis-la bien et tôt.",
+      "Compléter les slots restants aux <b>Exalted</b>, en activant un <b>Omen Sinistral Exaltation</b> (préfixe garanti) ou <b>Dextral</b> (suffixe garanti) quand un seul côté t'intéresse.",
+      "Mods corrects mais valeurs basses ? <b>Divine Orb</b> en toute fin pour reroll les valeurs.",
+    ],
+    warn:null,
+  },
+  {
+    id:"rare-2t1", cat:"finition",
+    name:"Rare prometteur → slams dirigés + réparation",
+    desc:"Un rare avec 2 T1 et des affixes libres : on remplit proprement, on répare si besoin.",
+    inputs:[ {key:"baseRare2T1",qty:1},{key:"exalt",qty:3},{key:"dirExalt",qty:2},{key:"whittling",qty:1},{key:"chaos",qty:1},{key:"divine",qty:1} ],
+    outcomes:[
+      { label:"Slams ratés malgré la réparation", prob:30, value:120,  tier:"brick" },
+      { label:"Correct (vendable)",               prob:38, value:450,  tier:"ok" },
+      { label:"Bon item",                         prob:25, value:1100, tier:"good" },
+      { label:"Excellent",                        prob:7,  value:3000, tier:"jackpot" },
+    ],
+    steps:[
+      "Compter les <b>affixes libres</b> (3 préfixes / 3 suffixes max) et identifier le côté où sont tes mods cibles.",
+      "<b>Exalted + Omen directionnel</b> (Sinistral = préfixe, Dextral = suffixe) pour chaque slot à remplir. Pour un slot critique, envisager le <b>Greater Exalted Orb</b> (niveau de mod minimum garanti).",
+      "Un slam pourri ? <b>Omen of Whittling + Chaos Orb</b> : remplace le mod de plus bas niveau de l'item. Vérifie d'abord que ton pire mod EST le plus bas niveau, sinon tu sacrifies autre chose.",
+      "<b>Divine Orb</b> en dernier pour parfaire les valeurs — jamais avant que la liste de mods soit définitive.",
+      "Corruption finale (Vaal) : uniquement si tu acceptes le brick — en 0.5 l'Omen of Corruption n'existe plus, c'est du pur RNG.",
+    ],
+    warn:"L'ordre des opérations est tout : essence/alloy tôt, exalts au milieu, Divine à la fin, Vaal jamais (ou en connaissance de cause).",
+  },
+
+  /* ---- DÉSACRATION CIBLÉE ---- */
+  {
+    id:"amulet-res", cat:"ciblee",
+    name:"Amulette résistances — mod désacré chirurgical",
+    desc:"Compléter une amulette à 2 résistances avec une 3e en désacration ciblée, puis exalts.",
+    inputs:[ {key:"baseAmulet",qty:1},{key:"boneJewel",qty:1},{key:"necromancy",qty:1},{key:"exalt",qty:2},{key:"dirExalt",qty:1},{key:"light",qty:1} ],
+    outcomes:[
+      { label:"Reveals ratés (même avec retry)", prob:32, value:40,   tier:"brick" },
+      { label:"Correct (triple résist.)",        prob:40, value:250,  tier:"ok" },
+      { label:"Bon roll (résist. + vie/mana)",   prob:22, value:700,  tier:"good" },
+      { label:"Excellent",                       prob:6,  value:1800, tier:"jackpot" },
+    ],
+    steps:[
+      "Partir d'une <b>amulette rare avec 2 bonnes résistances</b> et des affixes libres du bon côté.",
+      "<b>Désacrer avec l'os adapté au slot</b>, en activant l'<b>Omen Sinistral/Dextral Necromancy</b> pour pousser le reveal côté préfixe ou suffixe selon ta cible.",
+      "Au Well of Souls, choisir le meilleur des 3 mods proposés (ou <b>Abyssal Echoes</b> pour doubler les options sur un reveal critique).",
+      "Mod désacré raté ? <b>Omen of Light + Orb of Annulment</b> : retire spécifiquement le mod désacré pour retenter, sans toucher au reste.",
+      "Compléter les slots restants aux <b>Exalted dirigés</b> (vie, mana, attributs), puis <b>Divine</b> si les valeurs le méritent.",
+    ],
+    warn:"Le budget Omen of Light est statistique : compte ~1 retry sur 2 tentatives. Ajuste la quantité dans les inputs selon ton expérience réelle.",
+  },
+
+  /* ---- FRACTURING ---- */
+  {
+    id:"fract-farm", cat:"fracture",
+    name:"Production de bases fracturées",
+    desc:"Rare 4 mods dont 1 premium → Fracturing Orb. 25% de réussite, le prix de vente fait le reste.",
+    inputs:[ {key:"baseRare4m",qty:1},{key:"fracturing",qty:1} ],
+    outcomes:[
+      { label:"Mauvais mod verrouillé (brick)", prob:75, value:60,   tier:"brick" },
+      { label:"Bon mod verrouillé → revente",   prob:25, value:5000, tier:"jackpot" },
+    ],
+    steps:[
+      "Chercher sur le trade des <b>rares à exactement 4 mods dont 1 seul premium</b> (gros %ES, +niveaux, T1 demandé…) — ils sont souvent bradés car « presque bons ».",
+      "Vérifier l'<b>ilvl</b> : la base fracturée ne vaut que si elle permet les tiers max derrière.",
+      "<b>Fracturing Orb</b> : 1 chance sur 4 (4 mods) de verrouiller le bon. Un 5e mod ferait passer à 1/5 — d'où l'importance des 4 mods exactement.",
+      "Réussite → vendre comme <b>base de craft fracturée</b> (tes propres clients : les crafteurs de désacration premium). Échec → salvage ou revente symbolique.",
+      "Astuce 0.5 : les Fracturing Orbs se farment dans les <b>Cleansed Areas</b> — si tu les loot toi-même, ton coût d'entrée s'effondre et l'EV explose.",
+    ],
+    warn:"C'est le craft le plus binaire de l'outil : 3 tentatives sur 4 sont des pertes sèches. Ne le fais qu'avec un bankroll qui survit à 6-8 échecs d'affilée — la moyenne est ton amie seulement si tu peux l'attendre.",
+  },
+
+  /* ---- NOUVEAUTÉS 0.5 ---- */
+  {
+    id:"unique-rescue", cat:"nouveau",
+    name:"Sauvetage d'unique (Runeforging / Verisium)",
+    desc:"Acheter un unique recherché mais à base faible, upgrader sa base + Runic Ward, revendre.",
+    inputs:[ {key:"uniqueLow",qty:1},{key:"verisium",qty:1} ],
+    outcomes:[
+      { label:"Marché saturé, revente molle", prob:25, value:80,  tier:"brick" },
+      { label:"Revente normale",              prob:60, value:280, tier:"ok" },
+      { label:"Unique très demandé ce patch", prob:15, value:600, tier:"good" },
+    ],
+    steps:[
+      "Repérer les <b>uniques bas niveau qui définissent des builds en 0.5</b> mais droppent avec une base faible (sous le niveau 55).",
+      "Les acheter pas cher — la plupart des joueurs les bradent sans connaître le Runeforging.",
+      "Au <b>Runeforging (débloqué en Acte 3)</b>, dépenser du Verisium pour <b>upgrader la base vers une version endgame</b> et ajouter du Runic Ward.",
+      "Revendre l'unique « réparé » aux joueurs du build correspondant. Suivre les builds à la mode : c'est la demande qui fait le prix.",
+    ],
+    warn:"Craft quasi déterministe : la variance vient du marché, pas du craft. Regarde la barre de distribution — c'est à quoi ressemble un revenu régulier, par opposition aux gambles.",
+  },
+  {
+    id:"jewel-emotion", cat:"nouveau",
+    name:"Jewel — Liquid Emotions",
+    desc:"Jewel rare avec 2 bons mods + 1 raté : l'Emotion remplace un mod aléatoire par un mod garanti.",
+    inputs:[ {key:"jewelRare",qty:1},{key:"emotion",qty:2} ],
+    outcomes:[
+      { label:"L'Emotion écrase un bon mod",  prob:45, value:40,  tier:"brick" },
+      { label:"Correct",                      prob:30, value:200, tier:"ok" },
+      { label:"Le mod raté est remplacé : jewel propre", prob:25, value:550, tier:"good" },
+    ],
+    steps:[
+      "Acheter des <b>jewels rares à 2 bons mods + 1 mod raté</b> — bradés sur le trade pour la même raison que les « presque bons ».",
+      "Choisir la <b>Liquid Emotion</b> dont le mod garanti colle aux builds du moment (armure, dégâts d'attaque, rage…).",
+      "L'appliquer : elle <b>remplace un mod existant aléatoire</b> par son mod garanti. Avec 3 mods, 1 chance sur 3 de toucher le raté du premier coup.",
+      "Si elle écrase un bon mod, décider froidement : deuxième Emotion ou revente en l'état. Le coût est budgété pour 2 dans les inputs.",
+    ],
+    warn:"Le mod remplacé est aléatoire : c'est un mini-gamble à petite mise. Idéal pour tester le tracking de tes propres probabilités réelles.",
+  },
+];
+
+const tierColors = { brick:"var(--brick)", ok:"var(--ok)", good:"var(--good)", jackpot:"var(--jackpot)" };
+const openState = {};
+let activeCat = "gamble";
+const alerts = [];
+
+/* ============ helpers ============ */
+function fmt(n){ return Math.round(n).toLocaleString("fr-FR"); }
+function fmtDiv(ex){
+  const d = ex / prices.divine.value;
+  return d >= 0.1 ? " (" + (Math.round(d*10)/10).toLocaleString("fr-FR") + " div)" : "";
+}
+function recipeCost(r){ return r.inputs.reduce((s,i)=> s + prices[i.key].value * i.qty, 0); }
+function recipeEV(r){
+  const cost = recipeCost(r);
+  const totalProb = r.outcomes.reduce((s,o)=>s+o.prob,0) || 1;
+  const expReturn = r.outcomes.reduce((s,o)=> s + (o.prob/totalProb) * o.value, 0);
+  const ev = expReturn - cost;
+  const losing = r.outcomes.filter(o=>o.value < cost).reduce((s,o)=>s+o.prob,0) / totalProb * 100;
+  return { cost, expReturn, ev, losing, totalProb };
+}
+
+/* ============ rendu : prix (groupes repliables) ============ */
+function renderPrices(){
+  const box = document.getElementById("priceGroups");
+  box.innerHTML = "";
+  priceGroups.forEach((g,gi)=>{
+    const det = document.createElement("details");
+    det.className = "price-group";
+    if (gi === 0) det.open = true;
+    const sum = document.createElement("summary");
+    sum.textContent = g.label;
+    det.appendChild(sum);
+    const grid = document.createElement("div");
+    grid.className = "price-grid";
+    Object.entries(g.keys).forEach(([key,p])=>{
+      const cell = document.createElement("div");
+      cell.className = "price-cell";
+      cell.innerHTML = `<label for="px-${key}">${p.label}</label>
+        <div class="row"><input id="px-${key}" type="number" min="0" step="0.5" value="${p.value}"><span class="unit">ex</span></div>`;
+      cell.querySelector("input").addEventListener("change", e=>{
+        p.value = parseFloat(e.target.value) || 0;
+        renderRecipes(); renderAlerts();
+      });
+      grid.appendChild(cell);
+    });
+    det.appendChild(grid);
+    box.appendChild(det);
+  });
+}
+
+/* ============ rendu : onglets ============ */
+function renderTabs(){
+  const bar = document.getElementById("tabBar");
+  bar.innerHTML = "";
+  categories.forEach(c=>{
+    const btn = document.createElement("button");
+    btn.className = "tab" + (c.id===activeCat ? " active" : "");
+    btn.setAttribute("role","tab");
+    btn.setAttribute("aria-selected", c.id===activeCat);
+    btn.textContent = c.label;
+    btn.addEventListener("click", ()=>{ activeCat = c.id; renderTabs(); renderRecipes(); });
+    bar.appendChild(btn);
+  });
+  document.getElementById("tabDesc").textContent = categories.find(c=>c.id===activeCat).desc;
+}
+
+/* ============ rendu : recettes ============ */
+function renderRecipes(){
+  const list = document.getElementById("recipeList");
+  list.innerHTML = "";
+  const ranked = recipes.filter(r=>r.cat===activeCat).sort((a,b)=> recipeEV(b).ev - recipeEV(a).ev);
+
+  ranked.forEach((r, idx)=>{
+    const m = recipeEV(r);
+    const card = document.createElement("article");
+    card.className = "recipe" + (openState[r.id] ? " open" : "");
+
+    const head = document.createElement("div");
+    head.className = "recipe-head";
+    head.setAttribute("role","button");
+    head.setAttribute("tabindex","0");
+    head.setAttribute("aria-expanded", !!openState[r.id]);
+    head.innerHTML = `
+      <div class="rank-badge">${idx+1}</div>
+      <div class="recipe-title">
+        <div class="name">${r.name}</div>
+        <div class="desc">${r.desc}</div>
+      </div>
+      <div class="kpi"><div class="label">Coût / tentative</div>
+        <div class="value" style="color:var(--gold-bright)">${fmt(m.cost)} ex</div></div>
+      <div class="kpi"><div class="label">Profit moyen</div>
+        <div class="value ${m.ev>=0?"pos":"neg"}">${m.ev>=0?"+":""}${fmt(m.ev)} ex${fmtDiv(Math.abs(m.ev))}</div></div>
+      <div class="chev">▶</div>`;
+    const toggle = ()=>{ openState[r.id] = !openState[r.id]; renderRecipes(); };
+    head.addEventListener("click", toggle);
+    head.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();} });
+    card.appendChild(head);
+
+    /* barre de distribution */
+    const dist = document.createElement("div");
+    dist.className = "dist-wrap";
+    const bar = document.createElement("div");
+    bar.className = "dist-bar";
+    r.outcomes.forEach(o=>{
+      const seg = document.createElement("div");
+      seg.className = "dist-seg";
+      seg.style.width = (o.prob / m.totalProb * 100) + "%";
+      seg.style.background = tierColors[o.tier];
+      seg.title = `${o.label} — ${o.prob}% → ${fmt(o.value)} ex`;
+      if (o.prob / m.totalProb >= 0.12) seg.textContent = Math.round(o.prob / m.totalProb * 100) + "%";
+      bar.appendChild(seg);
+    });
+    dist.appendChild(bar);
+    const legend = document.createElement("div");
+    legend.className = "dist-legend";
+    legend.innerHTML = r.outcomes.map(o=>
+      `<span><span class="dot" style="background:${tierColors[o.tier]}"></span>${o.label} · ${fmt(o.value)} ex</span>`
+    ).join("") + `<span style="margin-left:auto;color:var(--loss)">${Math.round(m.losing)}% des tentatives sont perdantes</span>`;
+    dist.appendChild(legend);
+    card.appendChild(dist);
+
+    /* body */
+    const body = document.createElement("div");
+    body.className = "recipe-body";
+    const cols = document.createElement("div");
+    cols.className = "cols";
+
+    const left = document.createElement("div");
+    let costRows = r.inputs.map(i=>{
+      const p = prices[i.key];
+      return `<tr><td>${p.label}${i.qty>1?` × ${i.qty}`:""}</td><td class="num">${fmt(p.value*i.qty)} ex</td></tr>`;
+    }).join("");
+    left.innerHTML = `<h3>Coût des inputs</h3>
+      <table><thead><tr><th>Input</th><th style="text-align:right">Coût</th></tr></thead>
+      <tbody>${costRows}
+      <tr class="total-row"><td>Total par tentative</td><td class="num">${fmt(m.cost)} ex${fmtDiv(m.cost)}</td></tr></tbody></table>
+      <h3 style="margin-top:18px">Paliers de résultat <span class="unit">(probas et reventes éditables)</span></h3>`;
+    const outTable = document.createElement("table");
+    outTable.innerHTML = `<thead><tr><th>Palier</th><th>Proba %</th><th>Revente (ex)</th></tr></thead>`;
+    const tbody = document.createElement("tbody");
+    r.outcomes.forEach(o=>{
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td><span class="dot" style="background:${tierColors[o.tier]}"></span>${o.label}</td>
+        <td><input type="number" min="0" max="100" step="1" value="${o.prob}" aria-label="Probabilité ${o.label}"></td>
+        <td><input type="number" min="0" step="5" value="${o.value}" aria-label="Revente ${o.label}"></td>`;
+      const [probIn, valIn] = tr.querySelectorAll("input");
+      probIn.addEventListener("change", e=>{ o.prob = parseFloat(e.target.value)||0; renderRecipes(); });
+      valIn.addEventListener("change", e=>{ o.value = parseFloat(e.target.value)||0; renderRecipes(); });
+      tbody.appendChild(tr);
+    });
+    outTable.appendChild(tbody);
+    left.appendChild(outTable);
+    if (Math.round(m.totalProb) !== 100){
+      const note = document.createElement("p");
+      note.className = "sub";
+      note.style.marginTop = "8px";
+      note.innerHTML = `⚠ Les probabilités totalisent <b>${Math.round(m.totalProb)}%</b> — renormalisées dans le calcul, mais vise 100 pour rester lisible.`;
+      left.appendChild(note);
+    }
+
+    const right = document.createElement("div");
+    right.innerHTML = `<h3>Espérance de gain</h3>
+      <div class="ev-summary">
+        <div class="ev-card"><div class="label">Retour moyen</div><div class="value" style="color:var(--gold-bright)">${fmt(m.expReturn)} ex</div></div>
+        <div class="ev-card"><div class="label">Profit moyen</div><div class="value ${m.ev>=0?"pos":"neg"}">${m.ev>=0?"+":""}${fmt(m.ev)} ex</div></div>
+        <div class="ev-card"><div class="label">Tentatives perdantes</div><div class="value" style="color:var(--loss)">${Math.round(m.losing)}%</div></div>
+        <div class="ev-card"><div class="label">Profit sur 20 tentatives</div><div class="value ${m.ev>=0?"pos":"neg"}">${m.ev>=0?"+":""}${fmt(m.ev*20)} ex${fmtDiv(Math.abs(m.ev*20))}</div></div>
+      </div>
+      <h3 style="margin-top:18px">Step-by-step</h3>
+      <ol class="steps">${r.steps.map(s=>`<li>${s}</li>`).join("")}</ol>
+      ${r.warn ? `<div class="warn"><b>Attention :</b> ${r.warn}</div>` : ""}`;
+
+    cols.appendChild(left);
+    cols.appendChild(right);
+    body.appendChild(cols);
+    card.appendChild(body);
+    list.appendChild(card);
+  });
+}
+
+/* ============ alertes (mock V2) ============ */
+function renderAlertOptions(){
+  const sel = document.getElementById("alertItem");
+  sel.innerHTML = Object.entries(prices)
+    .map(([k,p])=>`<option value="${k}">${p.label}</option>`).join("");
+}
+function renderAlerts(){
+  const box = document.getElementById("alertList");
+  if (!alerts.length){
+    box.innerHTML = `<p class="empty">Aucune alerte pour l'instant. Crée la première ci-dessus.</p>`;
+    return;
+  }
+  box.innerHTML = "";
+  alerts.forEach((a,i)=>{
+    const cur = prices[a.item].value;
+    const triggered = a.dir==="below" ? cur <= a.val : cur >= a.val;
+    const div = document.createElement("div");
+    div.className = "alert-item";
+    div.innerHTML = `<span><b>${prices[a.item].label}</b> ${a.dir==="below"?"passe sous":"dépasse"} <span style="font-family:var(--mono);color:var(--gold-bright)">${fmt(a.val)} ex</span></span>
+      <span class="trig">${triggered ? "● DÉCLENCHÉE (prix actuel " + fmt(cur) + " ex)" : "en veille — prix actuel " + fmt(cur) + " ex"}</span>`;
+    const btn = document.createElement("button");
+    btn.className = "ghost";
+    btn.textContent = "Supprimer";
+    btn.addEventListener("click", ()=>{ alerts.splice(i,1); renderAlerts(); });
+    div.appendChild(btn);
+    box.appendChild(div);
+  });
+}
+document.getElementById("alertAdd").addEventListener("click", ()=>{
+  alerts.push({
+    item: document.getElementById("alertItem").value,
+    dir:  document.getElementById("alertDir").value,
+    val:  parseFloat(document.getElementById("alertVal").value)||0,
+  });
+  renderAlerts();
+});
+
+/* ============ historique (sparklines démo) ============ */
+function makeSeries(start, drift, vol, n=60){
+  const out=[start]; let v=start;
+  let seed=42+Math.round(start);
+  const rnd=()=>{ seed=(seed*9301+49297)%233280; return seed/233280; };
+  for(let i=1;i<n;i++){ v = Math.max(0.5, v * (1 + drift + (rnd()-0.5)*vol)); out.push(v); }
+  return out;
+}
+function sparkline(series, color){
+  const w=240,h=54,min=Math.min(...series),max=Math.max(...series);
+  const pts = series.map((v,i)=>{
+    const x=i/(series.length-1)*w;
+    const y=h-4-((v-min)/(max-min||1))*(h-10);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="courbe de prix démo">
+    <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.6"/>
+  </svg>`;
+}
+let liveHistory = null; // rempli par loadLive() si data/history.json existe
+
+function renderSparks(){
+  const watched = ["putrefaction","rib","fracturing","essenceG"];
+  const demoParams = { putrefaction:[-0.004,0.06], rib:[-0.008,0.05], fracturing:[0.003,0.07], essenceG:[-0.005,0.08] };
+  const grid = document.getElementById("sparkGrid");
+  grid.innerHTML = "";
+  watched.forEach(key=>{
+    const p = prices[key];
+    let series = null, label = "(démo)";
+    if (liveHistory){
+      const pts = liveHistory.map(h=>h[key]).filter(v=>typeof v==="number");
+      if (pts.length >= 5){ series = pts.slice(-120); label = `(${pts.length} relevés réels)`; }
+    }
+    if (!series){
+      const [drift,vol] = demoParams[key];
+      series = makeSeries(p.value*1.4, drift, vol);
+    }
+    const first=series[0], last=series[series.length-1];
+    const delta=(last-first)/first*100;
+    const up = delta>=0;
+    const card = document.createElement("div");
+    card.className = "spark-card";
+    card.innerHTML = `<div class="name">${p.label}</div>
+      <div class="delta" style="color:${up?"var(--abyss)":"var(--loss)"}">${up?"+":""}${delta.toFixed(0)}% sur la période ${label}</div>
+      ${sparkline(series, up?"var(--abyss)":"var(--loss)")}`;
+    grid.appendChild(card);
+  });
+}
+
+/* ============ prix live (V1 branchée — lit data/ généré par le collecteur) ============ */
+async function loadLive(){
+  const status = document.getElementById("liveStatus");
+  const pill = document.getElementById("livePill");
+  try{
+    const res = await fetch("data/latest.json", { cache:"no-store" });
+    if (!res.ok) throw new Error("pas de data/latest.json");
+    const data = await res.json();
+    let applied = 0;
+    for (const [key, info] of Object.entries(data.prices || {})){
+      if (prices[key] && typeof info.ex === "number"){
+        prices[key].value = info.ex;
+        const input = document.getElementById("px-"+key);
+        if (input) input.value = info.ex;
+        applied++;
+      }
+    }
+    const age = Math.round((Date.now() - new Date(data.fetchedAt).getTime()) / 60000);
+    pill.textContent = "PRIX LIVE — " + (data.league || "league inconnue");
+    pill.style.color = "var(--abyss)";
+    pill.style.borderColor = "var(--abyss)";
+    status.textContent = `${applied} prix chargés depuis POE2Scout · mis à jour il y a ${age} min` +
+      (data.missing?.length ? ` · non couverts (à saisir à la main) : ${data.missing.join(", ")}` : "") +
+      ` · les bases d'items restent à saisir manuellement.`;
+    try{
+      const h = await fetch("data/history.json", { cache:"no-store" });
+      if (h.ok) liveHistory = await h.json();
+    }catch(e){ /* historique pas encore disponible */ }
+    renderRecipes(); renderAlerts(); renderSparks();
+  }catch(e){
+    status.textContent = "Mode hors-ligne : prix factices éditables. (Le fichier data/latest.json apparaîtra après la première exécution du collecteur.)";
+  }
+}
+
+/* ============ init ============ */
+renderPrices();
+renderTabs();
+renderRecipes();
+renderAlertOptions();
+renderAlerts();
+renderSparks();
+openState["vile-classic"] = true;
+renderRecipes();
+loadLive();
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+name: Collecte des prix POE2Scout
+
+on:
+  schedule:
+    # Toutes les heures, à la 17e minute (éviter :00, heure de pointe des crons)
+    - cron: "17 * * * *"
+  workflow_dispatch: {} # bouton "Run workflow" pour lancer à la main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Collecter les prix
+        env:
+          POE2SCOUT_CONTACT_EMAIL: ${{ vars.POE2SCOUT_CONTACT_EMAIL }}
+        run: node collector/collect.mjs
+
+      - name: Commit des données
+        run: |
+          git config user.name "craftscout-bot"
+          git config user.email "actions@github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Aucun changement de prix."
+          else
+            git commit -m "prix: $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
