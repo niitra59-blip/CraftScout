@@ -1,16 +1,17 @@
 /**
- * CraftScout — collecteur de prix POE2Scout
- * ------------------------------------------
+ * CraftScout — collecteur de prix POE2Scout (v2, endpoints vérifiés à la source)
+ * ------------------------------------------------------------------------------
+ * Endpoints réels (lus dans le code source github.com/poe2scout/poe2scout) :
+ *   GET /api/Realms                                  → liste des realms (snake_case)
+ *   GET /api/{Realm}/Leagues                         → leagues, champs PascalCase (IsCurrent, DivinePrice…)
+ *   GET /api/{Realm}/Leagues/{LeagueName}/Items      → TOUS les items avec CurrentPrice (en Exalted)
+ *
  * Exécution : node collector/collect.mjs
- * Sorties   : data/latest.json        (prix du moment, mappés sur les clés de l'app)
- *             data/history.json       (séries temporelles, ajout d'un point par run, cap 5000)
- *             data/raw/*.json         (réponses brutes de l'API, pour debug/mapping)
+ * Sorties   : data/latest.json   (prix du moment, mappés sur les clés de l'app)
+ *             data/history.json  (un point par run, cap 5000)
+ *             data/raw/*.json    (réponses brutes, pour debug du mapping)
  *
  * Aucune dépendance : Node 20+ (fetch natif).
- *
- * IMPORTANT : renseigne ton email dans CONTACT_EMAIL (politesse demandée par l'API
- * POE2Scout pour identifier les consommateurs). En GitHub Actions, il est lu depuis
- * la variable d'environnement POE2SCOUT_CONTACT_EMAIL si définie.
  */
 
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -23,12 +24,10 @@ const RAW_DIR = `${DATA_DIR}/raw`;
 const HISTORY_CAP = 5000;
 
 /* ----------------------------------------------------------------
- * MAPPING : clé de l'app  →  nom exact de l'item côté POE2Scout.
- * Les bases d'items (Vile Robe fracturée, rares prometteurs…) ne sont
- * volontairement PAS ici : faible volume, l'API ne les couvre pas —
- * elles restent éditables à la main dans l'app.
- * Si un nom ne matche pas, il apparaîtra dans latest.json → missing,
- * et la réponse brute correspondante est dans data/raw/ pour corriger.
+ * MAPPING : clé de l'app → nom(s) exact(s) de l'item (champ Text).
+ * Plusieurs noms = moyenne des prix trouvés (utile pour les paires
+ * Sinistral/Dextral). Les bases d'items restent manuelles dans l'app
+ * (faible volume, non couvertes par l'API).
  * ---------------------------------------------------------------- */
 const TARGETS = {
   divine:       ["Divine Orb"],
@@ -41,12 +40,12 @@ const TARGETS = {
   artificer:    ["Artificer's Orb"],
   putrefaction: ["Omen of Putrefaction"],
   echoes:       ["Omen of Abyssal Echoes"],
-  necromancy:   ["Omen of Sinistral Necromancy", "Omen of Dextral Necromancy"], // moyenne des deux
+  necromancy:   ["Omen of Sinistral Necromancy", "Omen of Dextral Necromancy"],
   light:        ["Omen of Light"],
-  dirExalt:     ["Omen of Sinistral Exaltation", "Omen of Dextral Exaltation"], // moyenne des deux
+  dirExalt:     ["Omen of Sinistral Exaltation", "Omen of Dextral Exaltation"],
   whittling:    ["Omen of Whittling"],
   rib:          ["Preserved Rib"],
-  boneJewel:    ["Preserved Collarbone", "Preserved Clavicle"], // premier nom trouvé
+  boneJewel:    ["Preserved Collarbone", "Preserved Clavicle", "Preserved Vertebrae"],
 };
 
 /* ---------------------------------------------------------------- */
@@ -54,7 +53,7 @@ const TARGETS = {
 async function fetchJson(url) {
   const res = await fetch(url, {
     headers: {
-      "User-Agent": `CraftScout/0.1 (contact: ${CONTACT_EMAIL})`,
+      "User-Agent": `CraftScout/0.2 (contact: ${CONTACT_EMAIL})`,
       "Accept": "application/json",
     },
   });
@@ -67,81 +66,64 @@ async function dumpRaw(name, payload) {
   await writeFile(`${RAW_DIR}/${name}.json`, JSON.stringify(payload, null, 2));
 }
 
-/** Extraction de prix tolérante : les schémas varient selon les versions de l'API. */
-function extractPrice(item) {
-  const candidates = [
-    item?.currentPrice,
-    item?.price,
-    item?.latest_price?.price,
-    item?.latestPrice?.price,
-    item?.priceLogs?.[0]?.price,
-  ];
-  for (const c of candidates) {
-    const n = typeof c === "string" ? parseFloat(c) : c;
-    if (typeof n === "number" && isFinite(n) && n > 0) return n;
+/** Lecture tolérante PascalCase / camelCase / snake_case. */
+function field(obj, ...names) {
+  for (const n of names) {
+    if (obj?.[n] !== undefined && obj?.[n] !== null) return obj[n];
   }
-  return null;
-}
-
-function extractName(item) {
-  return item?.name || item?.text || item?.itemMetadata?.name || item?.apiId || null;
+  return undefined;
 }
 
 async function main() {
   await mkdir(DATA_DIR, { recursive: true });
 
-  /* 1. Leagues : trouver la league courante */
-  const leagues = await fetchJson(`${BASE}/leagues`);
-  await dumpRaw("leagues", leagues);
-  const leagueList = Array.isArray(leagues) ? leagues : leagues?.leagues || [];
-  const current =
-    leagueList.find(l => l?.isCurrent || l?.IsCurrent) ||
-    leagueList.find(l => !/standard/i.test(l?.value || l?.name || "")) ||
-    leagueList[0];
-  const leagueName = current?.value || current?.name || "Standard";
-  console.log(`League courante détectée : ${leagueName}`);
-
-  /* 2. Catégories d'items currency */
-  let categories = [];
+  /* 1. Realm PoE2 (réponse en snake_case d'après la source) */
+  let realm = "poe2";
   try {
-    const cats = await fetchJson(`${BASE}/items/categories`);
-    await dumpRaw("categories", cats);
-    categories = (cats?.currency_categories || cats?.currencyCategories || cats || [])
-      .map(c => c?.apiId || c?.id || c)
-      .filter(c => typeof c === "string");
+    const realms = await fetchJson(`${BASE}/Realms`);
+    await dumpRaw("realms", realms);
+    const poe2 = (Array.isArray(realms) ? realms : []).find(
+      r => field(r, "game_api_id", "GameApiId") === "poe2"
+    );
+    if (poe2) realm = field(poe2, "value", "Value") || realm;
   } catch (e) {
-    console.warn("Endpoint catégories indisponible, fallback :", e.message);
+    console.warn(`/Realms indisponible (${e.message}), realm par défaut : ${realm}`);
   }
-  if (!categories.length) {
-    // Fallback raisonnable d'après le repo poe2scout
-    categories = ["currency", "essences", "ritual", "abyss", "fragments", "runes"];
-  }
-  console.log(`Catégories à parcourir : ${categories.join(", ")}`);
+  console.log(`Realm : ${realm}`);
 
-  /* 3. Récupérer tous les items currency par catégorie */
-  const allItems = [];
-  for (const cat of categories) {
-    try {
-      const page = await fetchJson(
-        `${BASE}/items/currency/${encodeURIComponent(cat)}?league=${encodeURIComponent(leagueName)}&perPage=250`
-      );
-      await dumpRaw(`items-${cat}`, page);
-      const items = page?.items || page?.data || (Array.isArray(page) ? page : []);
-      console.log(`  ${cat}: ${items.length} items`);
-      allItems.push(...items);
-    } catch (e) {
-      console.warn(`  ${cat}: échec (${e.message})`);
+  /* 2. League courante (champs PascalCase : Value, IsCurrent, DivinePrice…) */
+  const leagues = await fetchJson(`${BASE}/${encodeURIComponent(realm)}/Leagues`);
+  await dumpRaw("leagues", leagues);
+  const list = Array.isArray(leagues) ? leagues : [];
+  const current =
+    list.find(l => field(l, "IsCurrent", "isCurrent", "is_current") === true) ||
+    list.find(l => !/standard/i.test(field(l, "Value", "value") || "")) ||
+    list[0];
+  if (!current) throw new Error("Aucune league renvoyée par l'API");
+  const leagueName = field(current, "Value", "value");
+  const divinePrice = field(current, "DivinePrice", "divinePrice", "divine_price");
+  console.log(`League courante : ${leagueName} (Divine ≈ ${divinePrice} ex)`);
+
+  /* 3. Tous les items de la league en un appel */
+  const items = await fetchJson(
+    `${BASE}/${encodeURIComponent(realm)}/Leagues/${encodeURIComponent(leagueName)}/Items`
+  );
+  if (!Array.isArray(items)) throw new Error("Réponse Items inattendue (pas un tableau)");
+  console.log(`${items.length} items reçus`);
+  // Dump compact : seulement les champs utiles, sinon le fichier raw est énorme
+  await dumpRaw("items-sample", items.slice(0, 40));
+
+  /* 4. Index par nom (Text pour la currency, Name pour les uniques) */
+  const byName = new Map();
+  for (const it of items) {
+    const price = field(it, "CurrentPrice", "currentPrice", "current_price");
+    if (typeof price !== "number" || !(price > 0)) continue;
+    for (const n of [field(it, "Text", "text"), field(it, "Name", "name")]) {
+      if (n && !byName.has(n.toLowerCase())) byName.set(n.toLowerCase(), price);
     }
   }
 
-  /* 4. Mapper sur nos clés */
-  const byName = new Map();
-  for (const it of allItems) {
-    const n = extractName(it);
-    const p = extractPrice(it);
-    if (n && p !== null && !byName.has(n.toLowerCase())) byName.set(n.toLowerCase(), p);
-  }
-
+  /* 5. Mapper sur nos clés */
   const prices = {};
   const missing = [];
   for (const [key, names] of Object.entries(TARGETS)) {
@@ -151,20 +133,29 @@ async function main() {
     if (found.length) {
       prices[key] = {
         ex: Math.round((found.reduce((s, v) => s + v, 0) / found.length) * 100) / 100,
-        source: names.join(" / "),
+        source: names.filter(n => byName.has(n.toLowerCase())).join(" / "),
       };
     } else {
       missing.push(key);
     }
   }
+  // Le Divine vient aussi de l'endpoint Leagues : on le préfère s'il est cohérent
+  if (typeof divinePrice === "number" && divinePrice > 0) {
+    prices.divine = { ex: Math.round(divinePrice * 100) / 100, source: "Leagues.DivinePrice" };
+    const i = missing.indexOf("divine");
+    if (i >= 0) missing.splice(i, 1);
+  }
 
-  /* 5. Écrire latest.json */
+  /* 6. Écrire latest.json */
   const now = new Date().toISOString();
-  const latest = { fetchedAt: now, league: leagueName, unit: "exalted", prices, missing };
+  const latest = { fetchedAt: now, league: leagueName, realm, unit: "exalted", prices, missing };
   await writeFile(`${DATA_DIR}/latest.json`, JSON.stringify(latest, null, 2));
-  console.log(`latest.json écrit — ${Object.keys(prices).length} prix mappés, ${missing.length} manquants${missing.length ? " (" + missing.join(", ") + ")" : ""}`);
+  console.log(
+    `latest.json écrit — ${Object.keys(prices).length} prix mappés` +
+    (missing.length ? `, manquants : ${missing.join(", ")}` : "")
+  );
 
-  /* 6. Accumuler l'historique */
+  /* 7. Accumuler l'historique */
   let history = [];
   const histPath = `${DATA_DIR}/history.json`;
   if (existsSync(histPath)) {
