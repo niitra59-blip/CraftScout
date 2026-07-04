@@ -116,7 +116,7 @@
     "Name": "Choir of the Storm",
     "Type": "Jade Amulet",
     "ApiId": null,
-    "CurrentPrice": 173,
+    "CurrentPrice": 100,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -226,7 +226,7 @@
     "Name": "Immaculate Adherence",
     "Type": "Solar Amulet",
     "ApiId": null,
-    "CurrentPrice": 9,
+    "CurrentPrice": 4,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0NoYWluc09mQWRoZXJlbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/643b0dc269/ChainsOfAdherence.png"
   },
   {
@@ -276,7 +276,7 @@
     "Name": "Mageblood",
     "Type": "Utility Belt",
     "ApiId": null,
-    "CurrentPrice": 399803.1391059479,
+    "CurrentPrice": 371880.16690686176,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
   },
   {
@@ -296,7 +296,7 @@
     "Name": "Ingenuity",
     "Type": "Utility Belt",
     "ApiId": null,
-    "CurrentPrice": 4,
+    "CurrentPrice": 10,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9XaWRvd21ha2VyIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/394f71de07/Widowmaker.png"
   },
   {
@@ -316,7 +316,7 @@
     "Name": "Shavronne's Satchel",
     "Type": "Fine Belt",
     "ApiId": null,
-    "CurrentPrice": 4,
+    "CurrentPrice": 2,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9TaGF2cm9ubmVzU2F0Y2hlbCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/03b20ba6b9/ShavronnesSatchel.png"
   },
   {
@@ -356,7 +356,7 @@
     "Name": "The Gnashing Sash",
     "Type": "Wide Belt",
     "ApiId": null,
-    "CurrentPrice": 4332427.871636967,
+    "CurrentPrice": 4536938.036263714,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9HbmFzaGluZ1Nhc2giLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c996ea805c/GnashingSash.png"
   },
   {
