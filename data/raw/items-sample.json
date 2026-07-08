@@ -86,7 +86,7 @@
     "Name": "Carnage Heart",
     "Type": "Amber Amulet",
     "ApiId": null,
-    "CurrentPrice": 4,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nhcm5hZ2VIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/fa1b9d80b8/CarnageHeart.png"
   },
   {
@@ -116,7 +116,7 @@
     "Name": "Choir of the Storm",
     "Type": "Jade Amulet",
     "ApiId": null,
-    "CurrentPrice": 120,
+    "CurrentPrice": 198,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -166,7 +166,7 @@
     "Name": "Yoke of Suffering",
     "Type": "Bloodstone Amulet",
     "ApiId": null,
-    "CurrentPrice": 20,
+    "CurrentPrice": 15,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1lva2VPZlN1ZmZlcmluZyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/89e7948e7c/YokeOfSuffering.png"
   },
   {
@@ -226,7 +226,7 @@
     "Name": "Immaculate Adherence",
     "Type": "Solar Amulet",
     "ApiId": null,
-    "CurrentPrice": 5,
+    "CurrentPrice": 8,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0NoYWluc09mQWRoZXJlbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/643b0dc269/ChainsOfAdherence.png"
   },
   {
@@ -236,7 +236,7 @@
     "Name": "Fireflower",
     "Type": "Solar Amulet",
     "ApiId": null,
-    "CurrentPrice": 2,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0ZpcmVmbG93ZXIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/9430446301/Fireflower.png"
   },
   {
@@ -266,7 +266,7 @@
     "Name": "Meginord's Girdle",
     "Type": "Rawhide Belt",
     "ApiId": null,
-    "CurrentPrice": 3,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NZWdpbm9yZHNHaXJkbGUiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2feba3dafb/MeginordsGirdle.png"
   },
   {
@@ -276,7 +276,7 @@
     "Name": "Mageblood",
     "Type": "Utility Belt",
     "ApiId": null,
-    "CurrentPrice": 251997.3087365543,
+    "CurrentPrice": 261006.73919184878,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
   },
   {
@@ -316,7 +316,7 @@
     "Name": "Shavronne's Satchel",
     "Type": "Fine Belt",
     "ApiId": null,
-    "CurrentPrice": 5,
+    "CurrentPrice": 3,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9TaGF2cm9ubmVzU2F0Y2hlbCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/03b20ba6b9/ShavronnesSatchel.png"
   },
   {
@@ -356,7 +356,7 @@
     "Name": "The Gnashing Sash",
     "Type": "Wide Belt",
     "ApiId": null,
-    "CurrentPrice": 371494.8040342324,
+    "CurrentPrice": 774621.485868878,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9HbmFzaGluZ1Nhc2giLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c996ea805c/GnashingSash.png"
   },
   {
