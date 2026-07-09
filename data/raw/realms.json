@@ -1,34 +1,34 @@
 [
   {
-    "value": "poe1/pc",
-    "label": "poe1/pc",
-    "game_api_id": "poe",
-    "realm_api_id": "pc",
-    "trade_api_path": "trade",
-    "default_league_value": "Mirage"
+    "Value": "poe1/pc",
+    "Label": "poe1/pc",
+    "GameApiId": "poe",
+    "RealmApiId": "pc",
+    "TradeApiPath": "trade",
+    "DefaultLeagueValue": "Mirage"
   },
   {
-    "value": "poe1/xbox",
-    "label": "poe1/xbox",
-    "game_api_id": "poe",
-    "realm_api_id": "xbox",
-    "trade_api_path": "trade",
-    "default_league_value": "Mirage"
+    "Value": "poe1/xbox",
+    "Label": "poe1/xbox",
+    "GameApiId": "poe",
+    "RealmApiId": "xbox",
+    "TradeApiPath": "trade",
+    "DefaultLeagueValue": "Mirage"
   },
   {
-    "value": "poe1/sony",
-    "label": "poe1/sony",
-    "game_api_id": "poe",
-    "realm_api_id": "sony",
-    "trade_api_path": "trade",
-    "default_league_value": "Mirage"
+    "Value": "poe1/sony",
+    "Label": "poe1/sony",
+    "GameApiId": "poe",
+    "RealmApiId": "sony",
+    "TradeApiPath": "trade",
+    "DefaultLeagueValue": "Mirage"
   },
   {
-    "value": "poe2/poe2",
-    "label": "poe2/poe2",
-    "game_api_id": "poe2",
-    "realm_api_id": "poe2",
-    "trade_api_path": "trade2",
-    "default_league_value": "Fate of the Vaal"
+    "Value": "poe2/poe2",
+    "Label": "poe2/poe2",
+    "GameApiId": "poe2",
+    "RealmApiId": "poe2",
+    "TradeApiPath": "trade2",
+    "DefaultLeagueValue": "Fate of the Vaal"
   }
 ]
