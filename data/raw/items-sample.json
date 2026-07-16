@@ -26,7 +26,7 @@
     "Name": "Serpent's Egg",
     "Type": "Gold Amulet",
     "ApiId": null,
-    "CurrentPrice": 3,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVNlcnBlbnRzRWdnIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fe60331911/TheSerpentsEgg.png"
   },
   {
@@ -86,7 +86,7 @@
     "Name": "Carnage Heart",
     "Type": "Amber Amulet",
     "ApiId": null,
-    "CurrentPrice": 4,
+    "CurrentPrice": 3,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nhcm5hZ2VIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/fa1b9d80b8/CarnageHeart.png"
   },
   {
@@ -106,7 +106,7 @@
     "Name": "Defiance of Destiny",
     "Type": "Jade Amulet",
     "ApiId": null,
-    "CurrentPrice": 6,
+    "CurrentPrice": 4,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlZmlhbmNlT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/713775c874/DefianceOfDestiny.png"
   },
   {
@@ -116,7 +116,7 @@
     "Name": "Choir of the Storm",
     "Type": "Jade Amulet",
     "ApiId": null,
-    "CurrentPrice": 99,
+    "CurrentPrice": 120,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -166,7 +166,7 @@
     "Name": "Yoke of Suffering",
     "Type": "Bloodstone Amulet",
     "ApiId": null,
-    "CurrentPrice": 19,
+    "CurrentPrice": 10,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1lva2VPZlN1ZmZlcmluZyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/89e7948e7c/YokeOfSuffering.png"
   },
   {
@@ -216,7 +216,7 @@
     "Name": "Astramentis",
     "Type": "Stellar Amulet",
     "ApiId": null,
-    "CurrentPrice": 20,
+    "CurrentPrice": 30,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0FzdHJhbWVudGlzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/541d1c98f9/Astramentis.png"
   },
   {
@@ -226,7 +226,7 @@
     "Name": "Immaculate Adherence",
     "Type": "Solar Amulet",
     "ApiId": null,
-    "CurrentPrice": 872.1120419513622,
+    "CurrentPrice": 1200,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0NoYWluc09mQWRoZXJlbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/643b0dc269/ChainsOfAdherence.png"
   },
   {
@@ -276,7 +276,7 @@
     "Name": "Mageblood",
     "Type": "Utility Belt",
     "ApiId": null,
-    "CurrentPrice": 172242.12828539405,
+    "CurrentPrice": 164036.56558131857,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
   },
   {
@@ -296,7 +296,7 @@
     "Name": "Ingenuity",
     "Type": "Utility Belt",
     "ApiId": null,
-    "CurrentPrice": 5,
+    "CurrentPrice": 2,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9XaWRvd21ha2VyIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/394f71de07/Widowmaker.png"
   },
   {
@@ -316,7 +316,7 @@
     "Name": "Shavronne's Satchel",
     "Type": "Fine Belt",
     "ApiId": null,
-    "CurrentPrice": 4,
+    "CurrentPrice": 3,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9TaGF2cm9ubmVzU2F0Y2hlbCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/03b20ba6b9/ShavronnesSatchel.png"
   },
   {
