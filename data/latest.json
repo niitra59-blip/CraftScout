@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-08-13T22:02:33.238Z",
+  "fetchedAt": "2026-08-13T23:02:34.001Z",
   "league": "Runes of Aldur",
   "realm": "poe2",
   "unit": "exalted",
   "prices": {
     "divine": {
-      "ex": 328.12,
+      "ex": 323.64,
       "source": "Leagues.DivinePrice"
     },
     "exalt": {
