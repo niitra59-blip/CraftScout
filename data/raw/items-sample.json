@@ -29,7 +29,7 @@
     "Type": "Gold Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 3,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVNlcnBlbnRzRWdnIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fe60331911/TheSerpentsEgg.png"
   },
   {
@@ -73,7 +73,7 @@
     "Type": "Amber Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 9,
+    "CurrentPrice": 12,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1hvcGhzQmxvb2QiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2e10b554f9/XophsBlood.png"
   },
   {
@@ -95,7 +95,7 @@
     "Type": "Amber Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 2,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nhcm5hZ2VIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/fa1b9d80b8/CarnageHeart.png"
   },
   {
@@ -117,7 +117,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 11,
+    "CurrentPrice": 15,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlZmlhbmNlT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/713775c874/DefianceOfDestiny.png"
   },
   {
@@ -128,7 +128,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1420.063525997495,
+    "CurrentPrice": 1549.544434713708,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -150,7 +150,7 @@
     "Type": "Lapis Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 9,
+    "CurrentPrice": 10,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVBhbmRlbW9uaXVzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5757408698/ThePandemonius.png"
   },
   {
@@ -238,7 +238,7 @@
     "Type": "Stellar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 55,
+    "CurrentPrice": 40,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0FzdHJhbWVudGlzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/541d1c98f9/Astramentis.png"
   },
   {
@@ -249,7 +249,7 @@
     "Type": "Solar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 85,
+    "CurrentPrice": 75.83321403006443,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0NoYWluc09mQWRoZXJlbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/643b0dc269/ChainsOfAdherence.png"
   },
   {
