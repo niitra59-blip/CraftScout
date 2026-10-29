@@ -18,7 +18,7 @@
     "Type": "Crimson Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 2,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0lkb2xPZlVsZHVybiIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/86bf4bd5d7/IdolOfUldurn.png"
   },
   {
@@ -29,7 +29,7 @@
     "Type": "Gold Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 3,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVNlcnBlbnRzRWdnIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fe60331911/TheSerpentsEgg.png"
   },
   {
@@ -73,7 +73,7 @@
     "Type": "Amber Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 8,
+    "CurrentPrice": 9,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1hvcGhzQmxvb2QiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2e10b554f9/XophsBlood.png"
   },
   {
@@ -95,7 +95,7 @@
     "Type": "Amber Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 2,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nhcm5hZ2VIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/fa1b9d80b8/CarnageHeart.png"
   },
   {
@@ -117,7 +117,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 20,
+    "CurrentPrice": 11,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlZmlhbmNlT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/713775c874/DefianceOfDestiny.png"
   },
   {
@@ -128,7 +128,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 691.416910623109,
+    "CurrentPrice": 1420.063525997495,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -216,7 +216,7 @@
     "Type": "Stellar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 3,
+    "CurrentPrice": 2,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlbGlyaXVtQW11bGV0IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9e8a23019a/DeliriumAmulet.png"
   },
   {
@@ -238,7 +238,7 @@
     "Type": "Stellar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 98,
+    "CurrentPrice": 55,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0FzdHJhbWVudGlzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/541d1c98f9/Astramentis.png"
   },
   {
@@ -249,7 +249,7 @@
     "Type": "Solar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 70.77992277992279,
+    "CurrentPrice": 85,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0NoYWluc09mQWRoZXJlbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/643b0dc269/ChainsOfAdherence.png"
   },
   {
@@ -293,7 +293,7 @@
     "Type": "Rawhide Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 3,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NZWdpbm9yZHNHaXJkbGUiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2feba3dafb/MeginordsGirdle.png"
   },
   {
@@ -304,7 +304,7 @@
     "Type": "Utility Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 95000,
+    "CurrentPrice": 90000,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
   },
   {
@@ -392,7 +392,7 @@
     "Type": "Wide Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 2079903.581594284,
+    "CurrentPrice": 2207651.493370678,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9HbmFzaGluZ1Nhc2giLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c996ea805c/GnashingSash.png"
   },
   {
@@ -425,7 +425,7 @@
     "Type": "Plate Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 2,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9Hb3JlZ2lyZGxlIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fbe737d02a/Goregirdle.png"
   },
   {
