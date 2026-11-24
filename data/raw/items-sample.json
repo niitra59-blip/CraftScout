@@ -117,7 +117,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 29,
+    "CurrentPrice": 31,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlZmlhbmNlT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/713775c874/DefianceOfDestiny.png"
   },
   {
@@ -128,7 +128,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 618.90625,
+    "CurrentPrice": 431.8855835240274,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -183,7 +183,7 @@
     "Type": "Bloodstone Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 36.40625,
+    "CurrentPrice": 60,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1lva2VPZlN1ZmZlcmluZyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/89e7948e7c/YokeOfSuffering.png"
   },
   {
@@ -238,7 +238,7 @@
     "Type": "Stellar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 109.21875,
+    "CurrentPrice": 10,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0FzdHJhbWVudGlzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/541d1c98f9/Astramentis.png"
   },
   {
@@ -293,7 +293,7 @@
     "Type": "Rawhide Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 3,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NZWdpbm9yZHNHaXJkbGUiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2feba3dafb/MeginordsGirdle.png"
   },
   {
@@ -304,7 +304,7 @@
     "Type": "Utility Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 53219.14845252735,
+    "CurrentPrice": 57309.10146048175,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
   },
   {
@@ -326,7 +326,7 @@
     "Type": "Utility Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 10,
+    "CurrentPrice": 12,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9XaWRvd21ha2VyIiwidyI6MiwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/394f71de07/Widowmaker.png"
   },
   {
@@ -392,7 +392,7 @@
     "Type": "Wide Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1885921.2801138333,
+    "CurrentPrice": 1977315.316211962,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9HbmFzaGluZ1Nhc2giLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c996ea805c/GnashingSash.png"
   },
   {
