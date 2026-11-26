@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-26T15:15:54.275Z",
+  "fetchedAt": "2026-11-26T23:53:16.501Z",
   "league": "Forbidden Rites",
   "realm": "poe2",
   "unit": "exalted",
   "prices": {
     "divine": {
-      "ex": 490.4,
+      "ex": 519.71,
       "source": "Leagues.DivinePrice"
     },
     "exalt": {
@@ -13,59 +13,59 @@
       "source": "Exalted Orb"
     },
     "greaterExalt": {
-      "ex": 11.32,
+      "ex": 21.93,
       "source": "Greater Exalted Orb"
     },
     "regal": {
-      "ex": 1.83,
+      "ex": 4.09,
       "source": "Regal Orb"
     },
     "chaos": {
-      "ex": 29.39,
+      "ex": 32.63,
       "source": "Chaos Orb"
     },
     "annul": {
-      "ex": 115.23,
+      "ex": 123.97,
       "source": "Orb of Annulment"
     },
     "fracturing": {
-      "ex": 3232.31,
+      "ex": 3768.39,
       "source": "Fracturing Orb"
     },
     "artificer": {
-      "ex": 6.97,
+      "ex": 2.68,
       "source": "Artificer's Orb"
     },
     "putrefaction": {
-      "ex": 32.69,
+      "ex": 29.91,
       "source": "Omen of Putrefaction"
     },
     "echoes": {
-      "ex": 24.55,
+      "ex": 41.49,
       "source": "Omen of Abyssal Echoes"
     },
     "necromancy": {
-      "ex": 26.63,
+      "ex": 14.33,
       "source": "Omen of Sinistral Necromancy / Omen of Dextral Necromancy"
     },
     "light": {
-      "ex": 4077.78,
+      "ex": 4857.96,
       "source": "Omen of Light"
     },
     "dirExalt": {
-      "ex": 46.17,
+      "ex": 59.69,
       "source": "Omen of Sinistral Exaltation / Omen of Dextral Exaltation"
     },
     "whittling": {
-      "ex": 7833.71,
+      "ex": 7933.31,
       "source": "Omen of Whittling"
     },
     "rib": {
-      "ex": 15.38,
+      "ex": 18.93,
       "source": "Preserved Rib"
     },
     "boneJewel": {
-      "ex": 8.03,
+      "ex": 59.53,
       "source": "Preserved Collarbone"
     }
   },
