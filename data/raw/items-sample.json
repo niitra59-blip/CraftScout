@@ -18,7 +18,7 @@
     "Type": "Crimson Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 3,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0lkb2xPZlVsZHVybiIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/86bf4bd5d7/IdolOfUldurn.png"
   },
   {
@@ -73,7 +73,7 @@
     "Type": "Amber Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 9,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1hvcGhzQmxvb2QiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2e10b554f9/XophsBlood.png"
   },
   {
@@ -95,7 +95,7 @@
     "Type": "Amber Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 4,
+    "CurrentPrice": 1,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nhcm5hZ2VIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/fa1b9d80b8/CarnageHeart.png"
   },
   {
@@ -117,7 +117,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 25,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0RlZmlhbmNlT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/713775c874/DefianceOfDestiny.png"
   },
   {
@@ -128,7 +128,7 @@
     "Type": "Jade Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 538.6624203821656,
+    "CurrentPrice": 300,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0Nob2lyT2ZUaGVTdG9ybSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/59c9c7bfc8/ChoirOfTheStorm.png"
   },
   {
@@ -150,7 +150,7 @@
     "Type": "Lapis Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 5,
+    "CurrentPrice": 4,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL1RoZVBhbmRlbW9uaXVzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5757408698/ThePandemonius.png"
   },
   {
@@ -238,7 +238,7 @@
     "Type": "Stellar Amulet",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 176.7024128686327,
+    "CurrentPrice": 134.390158172232,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmlxdWVzL0FzdHJhbWVudGlzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/541d1c98f9/Astramentis.png"
   },
   {
@@ -293,7 +293,7 @@
     "Type": "Rawhide Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 1,
+    "CurrentPrice": 4,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NZWdpbm9yZHNHaXJkbGUiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2feba3dafb/MeginordsGirdle.png"
   },
   {
@@ -304,7 +304,7 @@
     "Type": "Utility Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 64150.60483753974,
+    "CurrentPrice": 53453.44602226618,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9NYWdlYmxvb2QiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/79ac3ce7d3/Mageblood.png"
   },
   {
@@ -348,7 +348,7 @@
     "Type": "Fine Belt",
     "ApiId": null,
     "BaseItemTypeId": null,
-    "CurrentPrice": 5,
+    "CurrentPrice": 2,
     "IconUrl": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVW5pcXVlcy9TaGF2cm9ubmVzU2F0Y2hlbCIsInciOjIsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/03b20ba6b9/ShavronnesSatchel.png"
   },
   {
